@@ -31,6 +31,22 @@
             <button type="submit" class="btn btn-default">Ajouter</button>
         }
     </div>
+<div class="col-md-10 row">
+    <h3>Thoughts Bubbles</h3>
+    <table class="table table-condensed">
+        <tbody>
+        @foreach (var q in Model.Questions)
+        {
+            <tr>
+                <td>
+                    <p>@q.QuestionText</p>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
