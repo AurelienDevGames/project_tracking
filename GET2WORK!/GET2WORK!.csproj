@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="EFContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,6 +129,14 @@
     <Compile Include="Migrations\201609140844447_InitialCreate.cs" />
     <Compile Include="Migrations\201609140844447_InitialCreate.Designer.cs">
       <DependentUpon>201609140844447_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609150820357_Question and Answer.cs" />
+    <Compile Include="Migrations\201609150820357_Question and Answer.Designer.cs">
+      <DependentUpon>201609150820357_Question and Answer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609150914327_Change TimeOfDay to Timestamp.cs" />
+    <Compile Include="Migrations\201609150914327_Change TimeOfDay to Timestamp.Designer.cs">
+      <DependentUpon>201609150914327_Change TimeOfDay to Timestamp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EnumTimeOftheDay.cs" />
@@ -141,6 +150,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Project\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,6 +164,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609140844447_InitialCreate.resx">
       <DependentUpon>201609140844447_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609150820357_Question and Answer.resx">
+      <DependentUpon>201609150820357_Question and Answer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609150914327_Change TimeOfDay to Timestamp.resx">
+      <DependentUpon>201609150914327_Change TimeOfDay to Timestamp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

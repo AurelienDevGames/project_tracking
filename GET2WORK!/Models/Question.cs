@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GET2WORK_.Models
 {
@@ -7,7 +8,7 @@ namespace GET2WORK_.Models
         [Key]
         public int QuestionId { get; set; }
 
-        public TimeOfTheDay TimeOfTheDay { get; set; }
+        public DateTime Date { get; set; }
 
         public string QuestionText { get; set; }
         public string AnswerText { get; set; }
