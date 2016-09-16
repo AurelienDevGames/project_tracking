@@ -32,7 +32,7 @@
             @foreach (Project project in Model.Projects)
             {
                 <tr>
-                    <td>@project.Name</td>
+                    <td>@Html.ActionLink(project.Name, "Index", "Project", new {id = project.ProjectId}, null)</td>
                     <td>E</td>
                     <td>E</td>
                 </tr>
