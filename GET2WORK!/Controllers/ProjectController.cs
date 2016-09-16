@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GET2WORK_.Models;
+using HeyRed.MarkdownSharp;
 
 namespace GET2WORK_.Controllers
 {
@@ -21,6 +22,8 @@ namespace GET2WORK_.Controllers
                 ow.Questions = db.Question.Where(x => x.Project.ProjectId == id).ToList();
                 ow.Project = db.Project.Find(id);
             }
+            Markdown mark = new Markdown();
+            ow.Questions.ForEach(x => x.AnswerText = mark.Transform(x.AnswerText));
             return View("Index", ow);
         }
 
