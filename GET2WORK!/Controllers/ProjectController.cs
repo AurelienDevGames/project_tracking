@@ -10,8 +10,11 @@ namespace GET2WORK_.Controllers
     public class ProjectController : Controller
     {
         // GET: Project
-        public ActionResult Index(int id)
+        public ActionResult Index(int? id)
         {
+            if (!id.HasValue)
+                return RedirectToAction("Index", "Home");
+
             ProjectObjectWrapper ow = new ProjectObjectWrapper();
             using (var db = new MotivationContext())
             {
