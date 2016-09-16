@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@Model.Project.Name</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
 
@@ -24,8 +25,8 @@
                 <input class="form-control" id="QuestionId" name="q" placeholder="Question ?" />
             </div>
             <div class="form-group">
-                <label for="AnswerId">Answer</label>
-                <textarea class="form-control" id="AnswerId" name="a" rows="8" placeholder="Thoughts..."></textarea>
+                <label for="mde">Answer</label>
+                <textarea class="form-control" id="mde" name="a" rows="8" placeholder="Thoughts..."></textarea>
             </div>
             <input type="hidden" value="@Model.Project.ProjectId" name="idProject" />
             <button type="submit" class="btn btn-default">Ajouter</button>
@@ -49,6 +50,9 @@
 
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    var simplemde = new SimpleMDE({ element: $("#mde")[0] });
+</script>
 </body>
 </html>
