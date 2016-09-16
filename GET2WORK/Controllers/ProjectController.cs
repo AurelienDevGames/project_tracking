@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GET2WORK_.Models;
+using GET2WORK.Models;
 using HeyRed.MarkdownSharp;
 
-namespace GET2WORK_.Controllers
+namespace GET2WORK.Controllers
 {
     public class ProjectController : Controller
     {

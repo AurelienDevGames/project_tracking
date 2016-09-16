@@ -1,16 +1,16 @@
-namespace GET2WORK_.Migrations
+namespace GET2WORK.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GET2WORK_.MotivationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GET2WORK.MotivationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "GET2WORK_.MotivationContext";
+            ContextKey = "GET2WORK.MotivationContext";
         }
 
-        protected override void Seed(GET2WORK_.MotivationContext context)
+        protected override void Seed(GET2WORK.MotivationContext context)
         {
             //  This method will be called after migrating to the latest version.
 

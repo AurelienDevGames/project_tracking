@@ -1,4 +1,4 @@
-﻿namespace GET2WORK_.Models
+﻿namespace GET2WORK.Models
 {
     public enum TimeOfTheDay
     {

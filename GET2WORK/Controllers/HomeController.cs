@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using GET2WORK_.Models;
+using GET2WORK.Models;
 
-namespace GET2WORK_.Controllers
+namespace GET2WORK.Controllers
 {
     public class HomeController : Controller
     {

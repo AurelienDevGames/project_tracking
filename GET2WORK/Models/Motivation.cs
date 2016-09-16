@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace GET2WORK_.Models
+namespace GET2WORK.Models
 {
     public class Motivation
     {

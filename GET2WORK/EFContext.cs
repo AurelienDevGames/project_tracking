@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using GET2WORK_.Models;
+using GET2WORK.Models;
 
-namespace GET2WORK_
+namespace GET2WORK
 {
     public class MotivationContext : System.Data.Entity.DbContext
     {

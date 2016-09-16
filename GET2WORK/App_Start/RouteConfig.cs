@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace GET2WORK_
+namespace GET2WORK
 {
     public class RouteConfig
     {

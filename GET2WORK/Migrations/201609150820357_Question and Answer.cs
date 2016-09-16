@@ -1,4 +1,4 @@
-namespace GET2WORK_.Migrations
+namespace GET2WORK.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
