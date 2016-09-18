@@ -9,7 +9,7 @@ namespace ThoughtBubbles.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ThoughtBubbles.MotivationContext context)
