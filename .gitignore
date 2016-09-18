@@ -247,3 +247,5 @@ ModelManifest.xml
 Visual Studio 2015/
 #bower_components/
 .vs/
+
+.vs/config/applicationhost.config
