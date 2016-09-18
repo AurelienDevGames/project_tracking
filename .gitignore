@@ -245,7 +245,7 @@ ModelManifest.xml
 .fake/
 
 Visual Studio 2015/
-#bower_components/
+bower_components/
 .vs/
 
 .vs/config/applicationhost.config
