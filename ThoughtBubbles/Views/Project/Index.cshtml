@@ -2,10 +2,10 @@
 @{
     Layout = "../_Layout.cshtml";
 }
-@model ThoughtBubbles.Controllers.ProjectObjectWrapper
+@model ThoughtBubbles.Models.Project
 
 <div class="col-md-10 row">
-    <h3>Thoughts about @Model.Project.Name</h3>
+    <h3>Thoughts about @Model.Name</h3>
     @using (Html.BeginForm("CreateQA", "Project", FormMethod.Post))
     {
         <div class="form-group">
@@ -16,7 +16,7 @@
             <label for="mde">Answer</label>
             <textarea class="form-control" id="mde" name="a" rows="8" placeholder="Thoughts..."></textarea>
         </div>
-        <input type="hidden" value="@Model.Project.ProjectId" name="idProject" />
+        <input type="hidden" value="@Model.ProjectId" name="idProject" />
         <button type="submit" class="btn btn-default">Ajouter</button>
     }
 </div>

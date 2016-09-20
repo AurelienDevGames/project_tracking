@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,15 +17,14 @@ namespace ThoughtBubbles.Controllers
             if (!id.HasValue)
                 return RedirectToAction("Index", "Home");
 
-            ProjectObjectWrapper ow = new ProjectObjectWrapper();
+            Project Project;
             using (var db = new MotivationContext())
             {
-                ow.Questions = db.Question.Where(x => x.Project.ProjectId == id).ToList();
-                ow.Project = db.Project.Find(id);
+                Project = db.Project.Include(x => x.Questions).First(x => x.ProjectId == id);
             }
             Markdown mark = new Markdown();
-            ow.Questions.ForEach(x => x.AnswerText = mark.Transform(x.AnswerText));
-            return View("Index", ow);
+            Project.Questions.ForEach(x => x.AnswerText = mark.Transform(x.AnswerText));
+            return View("Index", Project);
         }
 
         [HttpPost]
@@ -37,8 +37,8 @@ namespace ThoughtBubbles.Controllers
                     {
                         QuestionText = q,
                         AnswerText = a,
-                        Project = db.Project.Find(idProject),
-                        Date = DateTime.Now
+                        Date = DateTime.Now,
+                        ProjectId = idProject
                     });
                     db.SaveChanges();
                 }
@@ -46,11 +46,5 @@ namespace ThoughtBubbles.Controllers
             return RedirectToAction("Index", "Project", new { id = idProject });
         }
 
-    }
-
-    public class ProjectObjectWrapper
-    {
-        public List<Question> Questions { get; set; }
-        public Project Project { get; set; }
     }
 }

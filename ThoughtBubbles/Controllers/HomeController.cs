@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,14 +16,14 @@ namespace ThoughtBubbles.Controllers
             DateTime timestamp = DateTime.Now;
             if (!string.IsNullOrWhiteSpace(date))
                 timestamp = DateTime.Parse(date);
-            HomeWrapper wrapper = new HomeWrapper();
+
+            List<Project> projects;
             using (var db = new MotivationContext())
             {
-                wrapper.Projects = db.Project.ToList();
-                wrapper.Motivation = db.Motivation.SingleOrDefault(x => x.Timestamp == timestamp);
+                projects = db.Project.Include(x => x.Questions).ToList();
             }
 
-            return View("Index", wrapper);
+            return View("Index", projects);
         }
 
         [HttpPost]
@@ -36,11 +37,5 @@ namespace ThoughtBubbles.Controllers
             return RedirectToAction("Index");
         }
 
-    }
-
-    public class HomeWrapper
-    {
-        public List<Project> Projects { get; set; }
-        public Motivation Motivation { get; set; }
     }
 }

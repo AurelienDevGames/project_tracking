@@ -1,8 +1,9 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/_Layout.cshtml";
 }
+
 @using ThoughtBubbles.Models
+@*@model ThoughtBubbles.Models.Project*@
 
 <div class="col-md-12 row">
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -12,17 +13,32 @@
         <thead>
             <tr>
                 <td>Projects</td>
-                <td>Morning</td>
-                <td>Afternoon</td>
+                <td>Frequence</td>
             </tr>
         </thead>
-        @foreach (Project project in Model.Projects)
+        @foreach (Project project in Model)
             {
             <tr>
                 <td>@Html.ActionLink(project.Name, "Index", "Project", new { id = project.ProjectId }, null)</td>
-                <td>E</td>
-                <td>E</td>
-            </tr>
+                <td>
+                    @for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+                    {
+                        int index = project.Questions.Count(x => x.Date.Date == new DateTime(DateTime.Now.Year, DateTime.Now.Month, i).Date);
+                        if (index == 0)
+                        {
+                            <img src="~/Content/img/grey.png" />
+                        }
+                        else if (index == 1)
+                        {
+                            <img src="~/Content/img/green_clear.png" />
+                        }
+                        else
+                        {
+                            <img src="~/Content/img/green_forest.png" />
+                        }
+                    }
+            </td>
+        </tr>
         }
     </table>
 
