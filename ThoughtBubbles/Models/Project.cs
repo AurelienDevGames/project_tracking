@@ -13,5 +13,6 @@ namespace ThoughtBubbles.Models
 
         public string Name { get; set; }
 
+        public virtual List<Question> Questions { get; set; }
     }
 }

@@ -103,12 +103,17 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\green_clear.png" />
+    <Content Include="Content\img\green_forest.png" />
+    <Content Include="Content\img\grey.png" />
     <Content Include="Content\simplemde.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\simplemde.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -122,8 +127,19 @@
     <Compile Include="Migrations\201609181333260_Initial Models.Designer.cs">
       <DependentUpon>201609181333260_Initial Models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.cs" />
+    <Compile Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.Designer.cs">
+      <DependentUpon>201609200729389_Suppression de Motivation - class non utilisée.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609200736567_Liaison entre Projet et Relation.cs" />
+    <Compile Include="Migrations\201609200736567_Liaison entre Projet et Relation.Designer.cs">
+      <DependentUpon>201609200736567_Liaison entre Projet et Relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.cs" />
+    <Compile Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.Designer.cs">
+      <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Motivation.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +163,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609181333260_Initial Models.resx">
       <DependentUpon>201609181333260_Initial Models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.resx">
+      <DependentUpon>201609200729389_Suppression de Motivation - class non utilisée.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609200736567_Liaison entre Projet et Relation.resx">
+      <DependentUpon>201609200736567_Liaison entre Projet et Relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.resx">
+      <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
