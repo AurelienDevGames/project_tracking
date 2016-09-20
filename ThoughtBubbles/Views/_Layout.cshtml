@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Content/simplemde.min.css">
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
 
     <script src="~/Scripts/jquery.min.js"></script>
@@ -13,13 +13,13 @@
     <script src="~/Scripts/simplemde.min.js"></script>
 </head>
 <body class="container-fluid">
-    <div class="col-md-10 row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 row">
         <ul class="nav nav-tabs">
-            <li role="presentation">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li role="presentation"><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span></a></li>
         </ul>
-    </div>
-    <div>
         @RenderBody()
     </div>
+    <div class="col-md-2"></div>
 </body>
 </html>
