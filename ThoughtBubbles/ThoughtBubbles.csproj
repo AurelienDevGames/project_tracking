@@ -107,6 +107,7 @@
     <Content Include="Content\img\green_forest.png" />
     <Content Include="Content\img\grey.png" />
     <Content Include="Content\simplemde.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -150,6 +151,10 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
