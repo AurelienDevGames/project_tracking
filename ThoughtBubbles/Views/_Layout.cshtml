@@ -1,16 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/Content/simplemde.min.css">
+    
+    @Styles.Render("~/bundles/style")
+    @*<link rel="stylesheet" href="~/Content/simplemde.min.css">
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-
-    <script src="~/Scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />*@
+    @Scripts.Render("~/bundles/vendor")
+    @*<script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/simplemde.min.js"></script>
+    <script src="~/Scripts/simplemde.min.js"></script>*@
 </head>
 <body class="container-fluid">
     <div class="col-md-2"></div>
