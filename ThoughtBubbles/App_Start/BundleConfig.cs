@@ -10,7 +10,10 @@ namespace ThoughtBubbles.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/vendor").IncludeDirectory("~/Scripts", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/vendor")
+                .Include("~/Scripts/jquery.min.js")
+                .Include("~/Scripts/bootstrap.min.js")
+                .Include("~/Scripts/simplemde.min.js"));
             bundles.Add(new StyleBundle("~/bundles/style").IncludeDirectory("~/Content", "*.css"));
             BundleTable.EnableOptimizations = true;
 
