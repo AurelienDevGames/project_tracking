@@ -11,16 +11,12 @@ namespace ThoughtBubbles.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index(string date)
+        public ActionResult Index()
         {
-            DateTime timestamp = DateTime.Now;
-            if (!string.IsNullOrWhiteSpace(date))
-                timestamp = DateTime.Parse(date);
-
             List<Project> projects;
             using (var db = new MotivationContext())
             {
-                projects = db.Project.Include(x => x.Questions).ToList();
+                projects = db.Project.Include(x => x.Questions).OrderBy(x => x.Name).ToList();
             }
 
             return View("Index", projects);
