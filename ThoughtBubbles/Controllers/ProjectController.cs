@@ -46,5 +46,19 @@ namespace ThoughtBubbles.Controllers
             return RedirectToAction("Index", "Project", new { id = idProject });
         }
 
+        [HttpPost]
+        public ActionResult DeleteQA(int idQuestion, int idProject)
+        {
+            if (idQuestion != 0)
+                using (var db = new MotivationContext())
+                {
+                    var q = new Question() {QuestionId = idQuestion};
+                    db.Question.Attach(q);
+                    db.Question.Remove(q);
+                    db.SaveChanges();
+                }
+            return RedirectToAction("Index", "Project", new { id = idProject });
+        }
+
     }
 }

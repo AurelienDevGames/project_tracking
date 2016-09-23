@@ -11,21 +11,24 @@
         <label for="QuestionId">Question</label>
         <input class="form-control" id="QuestionId" name="q" placeholder="Question ?" />
     </div>
-        <div class="form-group">
-            <label for="mde">Answer</label>
-            <textarea class="form-control" id="mde" name="a" rows="8" placeholder="Thoughts..."></textarea>
-        </div>
-        <input type="hidden" value="@Model.ProjectId" name="idProject" />
-        <button type="submit" class="btn btn-block center-block">Ajouter</button>
+    <div class="form-group">
+        <label for="mde">Answer</label>
+        <textarea class="form-control" id="mde" name="a" rows="8" placeholder="Thoughts..."></textarea>
+    </div>
+    <input type="hidden" value="@Model.ProjectId" name="idProject" />
+    <button type="submit" class="btn btn-block center-block">Ajouter</button>
 }
-<br/>
+<br />
 <table class="table table-condensed table-bordered">
     <tbody>
         @foreach (var q in Model.Questions)
             {
             <tr>
                 <td>
-                    <p><h4>@q.QuestionText</h4></p>
+                    <p>
+                        <span class="glyphicon glyphicon-remove-sign pull-right" onclick="DeleteQA(@q.QuestionId, @q.ProjectId)"></span>
+                        <h4>@q.QuestionText</h4>
+                    </p>
                     <p>@Html.Raw(q.AnswerText)</p>
                 </td>
             </tr>
@@ -35,7 +38,10 @@
 
 
 <script>
-    $(document).ready(function () {
-        var simplemde = new SimpleMDE({ element: $("#mde")[0], spellChecker: false });
-    });
+    var simplemde = new SimpleMDE({ element: $("#mde")[0], spellChecker: false });
+    function DeleteQA(idQuestion, idProject) {
+        $.post("/Project/DeleteQA", { idQuestion: idQuestion, idProject: idProject }).done(function () {
+            location.reload(true);
+        });
+    };
 </script>
