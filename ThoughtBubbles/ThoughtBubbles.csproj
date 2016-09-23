@@ -159,7 +159,12 @@
     <Compile Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.Designer.cs">
       <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609231229305_Add category on project insertion.cs" />
+    <Compile Include="Migrations\201609231229305_Add category on project insertion.Designer.cs">
+      <DependentUpon>201609231229305_Add category on project insertion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.resx">
       <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609231229305_Add category on project insertion.resx">
+      <DependentUpon>201609231229305_Add category on project insertion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

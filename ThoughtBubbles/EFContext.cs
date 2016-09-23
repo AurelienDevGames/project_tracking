@@ -11,5 +11,6 @@ namespace ThoughtBubbles
     {
         public DbSet<Project> Project { get; set; }
         public DbSet<Question> Question { get; set; }
+        public DbSet<Category> Category { get; set; }
     }
 }
