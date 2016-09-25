@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HeyRed.MarkdownSharp;
+using ServiceStack.OrmLite;
 using ThoughtBubbles.Models;
 
 namespace ThoughtBubbles.Controllers
@@ -17,45 +18,42 @@ namespace ThoughtBubbles.Controllers
             if (!id.HasValue)
                 return RedirectToAction("Index", "Home");
 
-            Project Project;
-            using (var db = new MotivationContext())
+            Project project;
+            using (var db = DBContext.Factory.Open())
             {
-                Project = db.Project.Include(x => x.Questions).First(x => x.ProjectId == id);
+                project = db.SingleById<Project>(id.Value);
+                project.Questions = db.Select<Question>(x => x.ProjectId == id.Value);
             }
             Markdown mark = new Markdown();
-            Project.Questions.ForEach(x => x.AnswerText = mark.Transform(x.AnswerText));
-            return View("Index", Project);
+            project.Questions.ForEach(x => x.AnswerText = mark.Transform(x.AnswerText));
+            return View("Index", project);
         }
 
         [HttpPost]
-        public ActionResult CreateQA(string q, string a, int idProject)
+        public ActionResult CreateQa(string q, string a, int idProject)
         {
             if (!string.IsNullOrWhiteSpace(q) || !string.IsNullOrWhiteSpace(a))
-                using (var db = new MotivationContext())
+                using (var db = DBContext.Factory.Open())
                 {
-                    db.Question.Add(new Question()
+                    db.Insert(new Question()
                     {
                         QuestionText = q,
                         AnswerText = a,
                         Date = DateTime.Now,
                         ProjectId = idProject
                     });
-                    db.SaveChanges();
                 }
 
             return RedirectToAction("Index", "Project", new { id = idProject });
         }
 
         [HttpPost]
-        public ActionResult DeleteQA(int idQuestion, int idProject)
+        public ActionResult DeleteQa(int idQuestion, int idProject)
         {
             if (idQuestion != 0)
-                using (var db = new MotivationContext())
+                using (var db = DBContext.Factory.Open())
                 {
-                    var q = new Question() {QuestionId = idQuestion};
-                    db.Question.Attach(q);
-                    db.Question.Remove(q);
-                    db.SaveChanges();
+                    db.DeleteById<Question>(idQuestion);
                 }
             return RedirectToAction("Index", "Project", new { id = idProject });
         }

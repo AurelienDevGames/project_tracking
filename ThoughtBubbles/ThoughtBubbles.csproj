@@ -69,6 +69,26 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.5.0\lib\net45\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.5.0\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.4.5.0\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.4.5.0\lib\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.5.0\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -139,31 +159,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
-    <Compile Include="EFContext.cs" />
+    <Compile Include="DBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609181333260_Initial Models.cs" />
-    <Compile Include="Migrations\201609181333260_Initial Models.Designer.cs">
-      <DependentUpon>201609181333260_Initial Models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.cs" />
-    <Compile Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.Designer.cs">
-      <DependentUpon>201609200729389_Suppression de Motivation - class non utilisée.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609200736567_Liaison entre Projet et Relation.cs" />
-    <Compile Include="Migrations\201609200736567_Liaison entre Projet et Relation.Designer.cs">
-      <DependentUpon>201609200736567_Liaison entre Projet et Relation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.cs" />
-    <Compile Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.Designer.cs">
-      <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609231229305_Add category on project insertion.cs" />
-    <Compile Include="Migrations\201609231229305_Add category on project insertion.Designer.cs">
-      <DependentUpon>201609231229305_Add category on project insertion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Question.cs" />
@@ -188,23 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609181333260_Initial Models.resx">
-      <DependentUpon>201609181333260_Initial Models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609200729389_Suppression de Motivation - class non utilisée.resx">
-      <DependentUpon>201609200729389_Suppression de Motivation - class non utilisée.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609200736567_Liaison entre Projet et Relation.resx">
-      <DependentUpon>201609200736567_Liaison entre Projet et Relation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609200821226_Clef Etrangere Question vers Projet.resx">
-      <DependentUpon>201609200821226_Clef Etrangere Question vers Projet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609231229305_Add category on project insertion.resx">
-      <DependentUpon>201609231229305_Add category on project insertion.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
