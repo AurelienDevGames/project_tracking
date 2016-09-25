@@ -17,9 +17,6 @@ namespace ThoughtBubbles
         {
             Factory = new OrmLiteConnectionFactory(Dbswitcher(), SqlServerDialect.Provider);
             isPROD = true;
-#if DEBUG
-            isPROD = false;
-#endif
         }
 
         private string Dbswitcher()
