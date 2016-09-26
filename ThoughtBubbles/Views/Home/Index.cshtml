@@ -17,25 +17,30 @@
             <tr>
                 <td>@Html.ActionLink(project.Name, "Index", "Project", new { id = project.ProjectId }, null)</td>
                 <td>
-                    @for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
-                    {
-                        int index = project.Questions.Count(x => x.Date.Date == new DateTime(DateTime.Now.Year, DateTime.Now.Month, i).Date);
-                        if (index == 0)
+                    @{
+                        DateTime bottomDate = DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)).Date;
+                        for (int i = 0; i <= 30; i++)
                         {
-                            <img src="~/Content/img/grey.png" />
-                        }
-                        else if (index == 1)
-                        {
-                            <img src="~/Content/img/green_clear.png" />
-                        }
-                        else
-                        {
-                            <img src="~/Content/img/green_forest.png" />
+
+                            int index = project.Questions.Count(x => x.Date.Date == bottomDate);
+                            if (index == 0)
+                            {
+                                <img src="~/Content/img/grey.png" />
+                            }
+                            else if (index == 1)
+                            {
+                                <img src="~/Content/img/green_clear.png" />
+                            }
+                            else
+                            {
+                                <img src="~/Content/img/green_forest.png" />
+                            }
+                            bottomDate = bottomDate.AddDays(1);
                         }
                     }
-            </td>
-        </tr>
-        }
+                </td>
+            </tr>
+            }
     </table>
 
 </div>

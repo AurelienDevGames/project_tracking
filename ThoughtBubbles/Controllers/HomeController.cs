@@ -17,6 +17,8 @@ namespace ThoughtBubbles.Controllers
             using (var db = DBContext.Factory.Open())
             {
                 projects = db.Select<Project>().ToList();
+                DateTime bottomDate = DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)).Date;
+                projects.ForEach(x => x.Questions = db.Select<Question>(y => y.ProjectId == x.ProjectId && y.Date >= bottomDate));
             }
             return View("Index", projects);
         }
